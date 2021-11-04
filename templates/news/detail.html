@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+  .images{
+    width: 550px;
+    height: auto;  }
+</style>
+<div class="row mt-4 container-fluid m-1">
+{% for a in my_news %}
+
+
+<div class="card">
+    <div class="card-header text-center">
+        <h3>
+        {{a.news_title}}
+        </h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{a.sub_title}}</p>
+      <img src="/media/{{a.news_image}} " class="card-img-top img-fluid mx-auto images rounded">
+      <p class="card-text"><small class="text-muted">{{a.post_time}}</small></p>
+      <p class="card-text">{{a.news_discription}}</p>
+      <a href="/" class="btn btn-primary">Go Back</a>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock body %}
+
